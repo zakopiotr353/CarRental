@@ -48,6 +48,30 @@
     height: 300px; /* Ustala stałą wysokość obrazu */
     object-fit: cover; /* Dopasowuje obraz do wymiarów, zachowując proporcje */
 }
+    .header-with-image {
+    position: relative;
+    width: 100%;
+    height: 300px; /* Możesz dostosować wysokość zgodnie z potrzebami */
+    overflow: hidden; /* Dodano, aby zapewnić, że tekst nie wyjdzie poza kontener */
+}
+
+.header-with-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Dopasowuje obraz do wymiarów, zachowując proporcje */
+}
+
+.header-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff; /* Kolor tekstu */
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5); /* Dodano przezroczyste tło, aby zwiększyć czytelność tekstu */
+    padding: 10px; /* Dodano padding, aby zwiększyć czytelność tekstu */
+    border-radius: 5px; /* Dodano zaokrąglenie krawędzi, aby poprawić wygląd */
+}
     </style>
 </head>
 <body>
@@ -73,10 +97,13 @@
             <button id="theme-toggler" class="btn btn-primary">Przełącz tryb</button>
         </div>
     </nav>
-    <header class="bg-light text-center py-5">
-        <h1 class="text-dark">Wypożyczalnia samochodów</h1>
-        <p class="lead">Znajdź idealny samochód dla Twoich potrzeb.</p>
-    </header>
+    <header class="header-with-image">
+    <img src="/static/images/rental.jpeg" alt="Obrazek w tle">
+    <div class="header-content">
+        <h1>Wypożyczalnia samochodów</h1>
+        <p>Znajdź idealny samochód dla Twoich potrzeb.</p>
+    </div>
+</header>
     <section class="container my-5">
         <div class="row">
             <div class="col-lg-6">
