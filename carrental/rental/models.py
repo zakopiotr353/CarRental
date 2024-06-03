@@ -41,11 +41,10 @@ class Car(models.Model):
     available = models.BooleanField()
     price = models.DecimalField(max_digits=10, decimal_places=2)
     value = models.DecimalField(max_digits=10, decimal_places=2)
-
+    category = models.CharField(max_length=20, choices=CATEGORIES)
     
 def __str__(self) -> str:
         return f"{self.brand} {self.model} (ID: {self.id})"
-pass
 
 
 class Address(models.Model):
@@ -79,7 +78,7 @@ class Order(models.Model):
     customer = models.ForeignKey(User, on_delete=models.RESTRICT)
     car = models.ForeignKey(Car, on_delete=models.RESTRICT)
     order_value = models.DecimalField(max_digits=10, decimal_places=2)
-    declared_order_duration = models.DurationField()
+    declared_order_duration = models.IntegerField()
     pickup_date = models.DateTimeField()
     return_date = models.DateTimeField()
     deposit = models.DecimalField(max_digits=10, decimal_places=2)
